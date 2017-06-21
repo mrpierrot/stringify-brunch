@@ -1,0 +1,24 @@
+{
+  "name": "stringify-brunch",
+  "version": "0.0.1",
+  "description": "Use html and json files as modules",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrpierrot/stringify-brunch.git"
+  },
+  "keywords": [
+    "brunch",
+    "html",
+    "js"
+  ],
+  "author": "Pierre Chabiland <pierre@casusludi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrpierrot/stringify-brunch/issues"
+  },
+  "homepage": "https://github.com/mrpierrot/stringify-brunch#readme"
+}
