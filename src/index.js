@@ -1,7 +1,10 @@
 
-function StringifyBrunch(config) {
-    this.config = config;
-    null;
+function StringifyBrunch({wrapper='commonjs'}={}) {
+    switch(wrapper){
+        case 'commonjs' : this.moduleExport = (data) => `module.exports = ${data}`; break;
+        case 'amd' : this.moduleExport = (data) => `return ${data}`; break;
+        default : (data) => data; break;
+    }
 }
 
 StringifyBrunch.prototype.brunchPlugin = true;
@@ -13,7 +16,7 @@ StringifyBrunch.prototype.pattern = /\.(?:html|htm|json)$/;
 StringifyBrunch.prototype.compile = function (data, path, callback) {
     var err, error, result;
     try {
-        return result = (JSON.stringify(data));
+        return result = this.moduleExport(JSON.stringify(data));
     } catch (_error) {
         err = _error;
         return error = err;
@@ -23,4 +26,3 @@ StringifyBrunch.prototype.compile = function (data, path, callback) {
 };
 
 module.exports = StringifyBrunch
-
