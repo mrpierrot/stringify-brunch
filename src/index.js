@@ -16,7 +16,7 @@ StringifyBrunch.prototype.pattern = /\.(?:html|htm|json)$/;
 StringifyBrunch.prototype.compile = function (data, path, callback) {
     var err, error, result;
     try {
-        return result = this.moduleExport(JSON.stringify(data));
+        return result = this.moduleExport(path.endsWith('.json')?data:JSON.stringify(data));
     } catch (_error) {
         err = _error;
         return error = err;
