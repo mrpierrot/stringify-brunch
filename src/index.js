@@ -11,7 +11,7 @@ StringifyBrunch.prototype.brunchPlugin = true;
 
 StringifyBrunch.prototype.type = 'template';
 
-StringifyBrunch.prototype.pattern = /\.(?:html|htm|json)$/;
+StringifyBrunch.prototype.pattern = /\.(?:html|htm|json|svg)$/;
 
 StringifyBrunch.prototype.compile = function (data, path, callback) {
     var err, error, result;
